@@ -1,6 +1,6 @@
 #define Version Trim(FileRead(FileOpen("..\VERSION")))
-#define PluginName "Pamplejuce"
-#define Publisher "Melatonin"
+#define PluginName "MouseModulator"
+#define Publisher "StrangeLoops"
 #define Year GetDateTimeString("yyyy","","")
 
 [Setup]
