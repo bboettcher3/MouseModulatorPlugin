@@ -42,6 +42,7 @@ void MouseModulatorPluginAudioProcessorEditor::resized() {
 void MouseModulatorPluginAudioProcessorEditor::mouseMove(const juce::MouseEvent& e) {
   if (mMouse != nullptr) {
     mMouseSigs.updatePosition(e.getScreenPosition().x, e.getScreenPosition().y);
+    mMouseVisuals.updateMousePosition(e.getScreenPosition().toFloat());
     juce::Desktop::setMousePosition(getScreenBounds().getCentre());
     // mMouse->setScreenPosition(getScreenBounds().getCentre().toFloat());
     DBG("type: " << (int)e.source.getType() << ", hover: " << (int)e.source.canHover()
@@ -63,6 +64,7 @@ void MouseModulatorPluginAudioProcessorEditor::mouseUp(const juce::MouseEvent& e
   // Save the mouse source that triggered this event
   mMouse = juce::Desktop::getInstance().getMouseSource(e.source.getIndex());
   mMouse->showMouseCursor(juce::MouseCursor::NoCursor);
+  mMouseVisuals.setIsActive(true);
 }
 
 void MouseModulatorPluginAudioProcessorEditor::mouseExit(const juce::MouseEvent& e) {
@@ -75,6 +77,7 @@ bool MouseModulatorPluginAudioProcessorEditor::keyPressed(const juce::KeyPress& 
   if (key.isKeyCode(juce::KeyPress::escapeKey) && mMouse != nullptr) {
     mMouse->showMouseCursor(juce::MouseCursor::NormalCursor);
     mMouse = nullptr;
+    mMouseVisuals.setIsActive(false);
     return true;
   }
 
