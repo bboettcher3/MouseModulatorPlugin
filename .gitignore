@@ -1,5 +1,9 @@
 /Builds/*
+/build/*
+/dist/*
 /JuceLibraryCode/*
+.vs/*
+out/*
 
 # Prerequisites
 *.d
