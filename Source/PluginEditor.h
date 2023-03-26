@@ -8,7 +8,6 @@
 
 #pragma once
 
-#include <JuceHeader.h>
 #include "PluginProcessor.h"
 #include "Components/MouseVisualsComponent.h"
 #include "Components/ConfigComponent.h"

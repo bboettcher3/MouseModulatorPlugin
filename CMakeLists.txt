@@ -52,7 +52,7 @@ juce_add_plugin("${PROJECT_NAME}"
     IS_MIDI_EFFECT FALSE                # Is this plugin a MIDI effect?
     EDITOR_WANTS_KEYBOARD_FOCUS TRUE    # Does the editor need keyboard focus?
     COPY_PLUGIN_AFTER_BUILD TRUE # On MacOS, plugin will be copied to /Users/you/Library/Audio/Plug-Ins/
-    PLUGIN_MANUFACTURER_CODE Loops               # This has to be one uppercase, rest lower for AU formats
+    PLUGIN_MANUFACTURER_CODE SLoo               # This has to be one uppercase, rest lower for AU formats
     PLUGIN_CODE SL01                            # A unique four-character plugin id with at least one upper-case character
     FORMATS "${FORMATS}"
     PRODUCT_NAME "${PROJECT_NAME}")        # The name of the final executable, which can differ from the target name
@@ -68,10 +68,10 @@ set(SourceFiles
     Source/PluginProcessor.cpp
     Source/MouseSignals.h
     Source/MouseSignals.cpp
-    Components/ConfigComponent.h
-    Components/ConfigComponent.cpp
-    Components/MouseVisualsComponent.h
-    Components/MouseVisualsComponent.cpp)
+    Source/Components/ConfigComponent.h
+    Source/Components/ConfigComponent.cpp
+    Source/Components/MouseVisualsComponent.h
+    Source/Components/MouseVisualsComponent.cpp)
 target_sources("${PROJECT_NAME}" PRIVATE ${SourceFiles})
 
 # No, we don't want our source buried in extra nested folders
@@ -81,7 +81,7 @@ set_target_properties("${PROJECT_NAME}" PROPERTIES FOLDER "")
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/Source PREFIX "" FILES ${SourceFiles})
 
 # Setup our binary data as a target
-# juce_add_binary_data(Assets SOURCES pamplejuce.png)
+juce_add_binary_data(Assets SOURCES pamplejuce.png)
 
 # Required for Linux happiness:
 # See https://forum.juce.com/t/loading-pytorch-model-using-binarydata/39997/2
