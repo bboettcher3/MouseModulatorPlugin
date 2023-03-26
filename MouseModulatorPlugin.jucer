@@ -2,14 +2,18 @@
 
 <JUCERPROJECT id="cXMOXi" name="MouseModulatorPlugin" projectType="audioplug"
               useAppConfig="0" addUsingNamespaceToJuceHeader="0" displaySplashScreen="1"
-              jucerFormatVersion="1">
+              jucerFormatVersion="1" pluginCharacteristicsValue="pluginIsSynth,pluginProducesMidiOut">
   <MAINGROUP id="U0eKbE" name="MouseModulatorPlugin">
     <GROUP id="{24389964-CB9C-6F24-42DE-5BDECBB85A01}" name="Source">
       <GROUP id="{62E85464-B16C-5A0A-0385-9AF3112027CB}" name="Components">
-        <FILE id="NRDkQa" name="MouseCaptureComponent.cpp" compile="1" resource="0"
-              file="Source/Components/MouseCaptureComponent.cpp"/>
-        <FILE id="Z3pTbS" name="MouseCaptureComponent.h" compile="0" resource="0"
-              file="Source/Components/MouseCaptureComponent.h"/>
+        <FILE id="YTY4xr" name="ConfigComponent.cpp" compile="1" resource="0"
+              file="Source/Components/ConfigComponent.cpp"/>
+        <FILE id="jawVVk" name="ConfigComponent.h" compile="0" resource="0"
+              file="Source/Components/ConfigComponent.h"/>
+        <FILE id="GqZj1t" name="MouseVisualsComponent.cpp" compile="1" resource="0"
+              file="Source/Components/MouseVisualsComponent.cpp"/>
+        <FILE id="V3wdBJ" name="MouseVisualsComponent.h" compile="0" resource="0"
+              file="Source/Components/MouseVisualsComponent.h"/>
       </GROUP>
       <FILE id="Xen5Sl" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
@@ -19,6 +23,9 @@
             file="Source/PluginEditor.cpp"/>
       <FILE id="fbEqPK" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
     </GROUP>
+    <FILE id="e2vxkp" name="MouseSignals.cpp" compile="1" resource="0"
+          file="Source/MouseSignals.cpp"/>
+    <FILE id="ldHzXv" name="MouseSignals.h" compile="0" resource="0" file="Source/MouseSignals.h"/>
   </MAINGROUP>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
   <EXPORTFORMATS>
