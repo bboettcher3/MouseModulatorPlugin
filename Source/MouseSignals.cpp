@@ -25,4 +25,9 @@ void MouseSignals::updatePosition(float x, float y) {
   mPos.y = y;
 }
 
-void MouseSignals::updatePressure(float pressure) { mPressure = pressure; }
+void MouseSignals::updatePressure(float pressure) { 
+  mPressure = pressure;
+#if DEBUG_SIGS
+
+#endif //DEBUG_SIGS
+}

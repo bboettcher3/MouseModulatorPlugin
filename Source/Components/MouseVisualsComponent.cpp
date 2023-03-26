@@ -14,7 +14,6 @@
 //==============================================================================
 MouseVisualsComponent::MouseVisualsComponent() {
   juce::Desktop::getInstance().addGlobalMouseListener(this);
-  addKeyListener(this);
   setWantsKeyboardFocus(true);
   setFramesPerSecond(30);
 }
@@ -23,9 +22,9 @@ MouseVisualsComponent::~MouseVisualsComponent() {}
 
 void MouseVisualsComponent::paint(juce::Graphics& g) {
   g.fillAll(juce::Colours::black);
-  g.setColour(mMouse != nullptr ? juce::Colours::lawngreen : juce::Colours::red);
-  juce::Point<float> vector = getLocalBounds().getCentre().getPointOnCircumference(mMouseSpeed, mMouseAngle);
-  g.drawLine(getLocalBounds().getCentreX(), getLocalBounds().getCentreY(), vector.x, vector.y, 2);
+  //g.setColour(mMouse != nullptr ? juce::Colours::lawngreen : juce::Colours::red);
+  //juce::Point<float> vector = getLocalBounds().getCentre().getPointOnCircumference(mMouseSpeed, mMouseAngle);
+  //g.drawLine(getLocalBounds().getCentreX(), getLocalBounds().getCentreY(), vector.x, vector.y, 2);
   g.drawRect(getLocalBounds(), 2);  // draw an outline around the component
 }
 
@@ -35,6 +34,6 @@ void MouseVisualsComponent::update() {
 
 }
 
-void MouseVisualsComponent::updateMousePosition(juce::MouseInputSource::InputSourceType type, juce::Point<float> position) {
+void MouseVisualsComponent::updateMousePosition(juce::Point<float> position) {
 
 }

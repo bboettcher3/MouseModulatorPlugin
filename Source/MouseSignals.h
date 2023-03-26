@@ -10,24 +10,31 @@
 
 #pragma once
 
+#include <JuceHeader.h>
+
 class MouseSignals {
  public:
   MouseSignals();
   ~MouseSignals() {}
 
-  typedef struct Point {
-    Point() : x(0), y(0) {}
-    Point(float x, float y) : x(x), y(y) {}
-    float x;
-    float y;
-  } Point;
+  class Signal {
+   public:
+    Signal(juce::String name, int midiCC);
+    ~Signal();
+
+    juce::String name;
+    int midiCC;
+    bool sendMidi = false;
+    bool sendOsc = false;
+    bool sendMapper = false;
+  };
 
   void updatePosition(float x, float y);
   void updatePressure(float pressure);
 
  private:
   // Position-based signals
-  Point mPos;                      // Position on the screen
+  juce::Point<float> mPos;         // Position on the screen
   float mMoveAngle;                // Movement angle in radians
   float mSpeedX, mSpeedY, mSpeed;  // Speed in each direction and total
   float mPressure;                 // Pen pressure
